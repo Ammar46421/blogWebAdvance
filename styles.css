@@ -1,0 +1,230 @@
+* {
+    /* padding: 0; */
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+/* Navbar Start */
+
+#navbar {
+    color: white;
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    position: sticky;
+    align-items: center;
+
+
+
+}
+
+#navbar #titleBar #title {
+    font-size: 34px;
+    margin-left: 50px;
+    font-weight: bold;
+    cursor: default;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+#navbar #menuBar #menuList {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 35px;
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+#navbar #menuBar #menuList li {
+    list-style-type: none;
+    margin-right: 25px;
+    display: inline-block;
+    cursor: pointer;
+    font-family: 'Courier New', Courier, monospace !important;
+
+}
+
+#navbar #menuBar #menuList li a {
+    color: white;
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    /* padding: 10px; */
+    font-family: 'Courier New', Courier, monospace !important;
+}
+
+
+/* Navbar End */
+
+/* blog form start */
+
+#blogInfo {
+    border: 2px solid #333;
+    border-radius: 8px;
+    margin: 15px 15px;
+    padding: 8px 8px;
+    width: 60%;
+    justify-self: center;
+    /* color: white;
+    background-color: #333; */
+}
+
+#blogInfo h2 {
+    text-align: center;
+    font-size: 50px;
+}
+
+/* blogFormOpener start */
+
+#blogFormOpener {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 200px;
+    height: 100px; */
+}
+
+#blogButton {
+    margin-top: 20px;
+    font-size: 30px;
+    /* width: 200px; */
+    /* justify-content: center; */
+    color: #ffffff;
+    background-color: #333;
+    cursor: pointer;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    border: none;
+    border-radius: 5px;
+    transition: 0.7s ease-out 100ms;
+}
+
+#blogButton :hover {
+    color: black;
+    background-color: #c0c0c0;
+    /* transition: 1s ease-in-out; */
+}
+
+
+/* blogFormOpener end */
+
+#blogContainer {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 500px;
+    border: 1px solid #333;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#blogForm .form-group {
+    margin-bottom: 15px;
+}
+
+#blogForm label {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    padding-top: 3px;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+#blogForm input,
+#blogForm textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+    resize: none;
+}
+
+#blogForm #submitButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    transition: 0.7s ease-out 100ms;
+}
+
+
+#blogForm #submitButton:hover {
+    color: black;
+    background-color: #c0c0c0;
+    /* transition: background-color 0.8s ease-in-out, transform 0.8s ease-in-out, color 0.8s ease-in-out; */
+}
+
+
+/* BLOG POST SECTION */
+
+/* Blog Posts Section Styling */
+#blogPostsSection {
+    margin: 20px auto;
+    max-width: 700px;
+}
+
+#blogPostsSection h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.blogPost {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.blogPost h3 {
+    margin: 0 0 10px;
+    font-size: 30px;
+    color: #000000;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.blogPost p {
+    margin: 5px 0;
+    text-align: center;
+    font-size: 23px;
+    color: #555;
+}
+
+.deleteButton {
+    color: white;
+    background-color: #333;
+    /* margin: 25%; */
+    width: 25%;
+    height: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.editButton {
+    color: white;
+    background-color: #333;
+    margin-left: 25%;
+    width: 25%;
+    height: 30px;
+    border-radius: 12px;
+    cursor: pointer;
+}
