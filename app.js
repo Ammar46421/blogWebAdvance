@@ -1,20 +1,23 @@
-function addBlog(){
-    document.getElementById('blogButton')
-    
+function addBlog() {
+    document.getElementById('blogButton').style.display = 'none';
+    document.getElementById('blogInfo').style.display = 'none';
+    document.getElementById('blogContainer').style.display = 'block';
 }
 
 function submitBlog() {
-    const title = document.getElementById('addTitle').value;
-    const content = document.getElementById('addContent').value;
+    let title = document.getElementById('addTitle').value;
+    let content = document.getElementById('addContent').value;
 
     if (title === "" || content === "") {
         alert("Please fill in both the title and content.");
         return;
     }
 
-   
-    const blogPost = document.createElement("div");
+
+    let blogPost = document.createElement("div");
     blogPost.classList.add("blogPost");
+
+    
 
     blogPost.innerHTML = `
     <h3>${title}</h3>
@@ -22,18 +25,22 @@ function submitBlog() {
     <button class="editButton" onclick="editBlog(this)">Edit</button>
     <button class="deleteButton" onclick="deleteBlog(this)">Delete</button>`;
 
- 
+
     document.getElementById("blogPost").appendChild(blogPost);
 
-    document.getElementById("addTitle").value = ""; 
-    document.getElementById("addContent").value = ""; 
+    document.getElementById("addTitle").value = "";
+    document.getElementById("addContent").value = "";
+
+    document.getElementById('blogContainer').style.display = 'none';
+    document.getElementById('blogInfo').style.display = 'block';
+    document.getElementById('blogButton').style.display = 'block';
 };
 
 
 function editBlog(button) {
-    const blogPost = button.parentElement;
-    const titleElement = blogPost.querySelector('h3');
-    const contentElement = blogPost.querySelector('p');
+    let blogPost = button.parentElement;
+    let titleElement = blogPost.querySelector('h3');
+    let contentElement = blogPost.querySelector('p');
 
     document.getElementById('addTitle').value = titleElement.innerText;
     document.getElementById('addContent').value = contentElement.innerText;
@@ -42,20 +49,24 @@ function editBlog(button) {
 
     button.innerText = "Save";
     button.setAttribute('onclick', 'saveBlog(this)');
+
+    document.getElementById('blogButton').style.display = 'none';
+    document.getElementById('blogInfo').style.display = 'none';
+    document.getElementById('blogContainer').style.display = 'block';
 }
 
 function saveBlog(button) {
-    const newTitle = document.getElementById('addTitle').value.trim();
-    const newContent = document.getElementById('addContent').value.trim();
+    let newTitle = document.getElementById('addTitle').value.trim();
+    let newContent = document.getElementById('addContent').value.trim();
 
     if (newTitle === "" || newContent === "") {
         alert("Please fill in both the title and content.");
         return;
     }
 
-    const blogPost = button.parentElement;
-    const titleElement = blogPost.querySelector('h3');
-    const contentElement = blogPost.querySelector('p');
+    let blogPost = button.parentElement;
+    let titleElement = blogPost.querySelector('h3');
+    let contentElement = blogPost.querySelector('p');
 
     titleElement.innerText = newTitle;
     contentElement.innerText = newContent;
@@ -65,9 +76,13 @@ function saveBlog(button) {
 
     button.innerText = "Edit";
     button.setAttribute('onclick', 'editBlog(this)');
+
+    document.getElementById('blogButton').style.display = 'block';
+    document.getElementById('blogInfo').style.display = 'block';
+    document.getElementById('blogContainer').style.display = 'none';
 }
 
 function deleteBlog(button) {
-    const blogPost = button.parentElement;
+    let blogPost = button.parentElement;
     blogPost.remove();
 }
