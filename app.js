@@ -15,7 +15,7 @@ function submitBlog() {
 
 
     let blogPost = document.createElement("div");
-    blogPost.classList.add("blogPost");
+    blogPost.className = 'blogPost';
 
     
 
