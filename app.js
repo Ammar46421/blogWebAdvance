@@ -25,7 +25,6 @@ function submitBlog() {
     <button class="editButton" onclick="editBlog(this)">Edit</button>
     <button class="deleteButton" onclick="deleteBlog(this)">Delete</button>`;
 
-
     document.getElementById("blogPost").appendChild(blogPost);
 
     document.getElementById("addTitle").value = "";
