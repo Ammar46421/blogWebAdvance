@@ -17,7 +17,7 @@ function submitBlog() {
     let blogPost = document.createElement("div");
     blogPost.className = 'blogPost';
 
-    
+
 
     blogPost.innerHTML = `
     <h3>${title}</h3>
@@ -82,6 +82,8 @@ function saveBlog(button) {
 }
 
 function deleteBlog(button) {
-    let blogPost = button.parentElement;
-    blogPost.remove();
+    if (confirm("Are you sure you want to delete this blog post?")) {
+        let blogPost = button.parentElement;
+        blogPost.remove();
+    }
 }
