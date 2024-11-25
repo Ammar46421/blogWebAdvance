@@ -2,6 +2,8 @@ function addBlog() {
     document.getElementById('blogButton').style.display = 'none';
     document.getElementById('blogInfo').style.display = 'none';
     document.getElementById('blogContainer').style.display = 'block';
+    // document.getElementById('recentBlogs').style.display = 'block';
+
 }
 
 function submitBlog() {
@@ -13,12 +15,8 @@ function submitBlog() {
         return;
     }
 
-
     let blogPost = document.createElement("div");
     blogPost.className = 'blogPost';
-
-
-
     blogPost.innerHTML = `
     <h3>${title}</h3>
     <p>${content}</p>
@@ -31,6 +29,7 @@ function submitBlog() {
     document.getElementById("addContent").value = "";
 
     document.getElementById('blogContainer').style.display = 'none';
+    document.getElementById('recentBlogs').style.display = 'block';
     document.getElementById('blogInfo').style.display = 'block';
     document.getElementById('blogButton').style.display = 'block';
 };
@@ -52,6 +51,7 @@ function editBlog(button) {
     document.getElementById('blogButton').style.display = 'none';
     document.getElementById('blogInfo').style.display = 'none';
     document.getElementById('blogContainer').style.display = 'block';
+    // document.getElementById('recentBlogs').style.display = 'block';
 }
 
 function saveBlog(button) {
@@ -79,6 +79,7 @@ function saveBlog(button) {
     document.getElementById('blogButton').style.display = 'block';
     document.getElementById('blogInfo').style.display = 'block';
     document.getElementById('blogContainer').style.display = 'none';
+    
 }
 
 function deleteBlog(button) {
@@ -86,4 +87,10 @@ function deleteBlog(button) {
         let blogPost = button.parentElement;
         blogPost.remove();
     }
+
+    if (!blogPost || blogPost.innerHTML === "") {
+        if (recentBlogs) {
+            recentBlogs.style.display = "none";
+        }
+}
 }
