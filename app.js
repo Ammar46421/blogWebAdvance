@@ -9,30 +9,42 @@ function addBlog() {
 function submitBlog() {
     let title = document.getElementById('addTitle').value;
     let content = document.getElementById('addContent').value;
+    let pictureInput = document.getElementById('addPicture');
 
-    if (title === "" || content === "") {
-        alert("Please fill in both the title and content.");
+    if (title === "" || content === "" || pictureInput.files.length === 0) {
+        alert("Please fill in all fields and select an image.");
         return;
     }
 
-    let blogPost = document.createElement("div");
-    blogPost.className = 'blogPost';
-    blogPost.innerHTML = `
-    <h3>${title}</h3>
-    <p>${content}</p>
-    <button class="editButton" onclick="editBlog(this)">Edit</button>
-    <button class="deleteButton" onclick="deleteBlog(this)">Delete</button>`;
+    let file = pictureInput.files[0];
+    let reader = new FileReader();
 
-    document.getElementById("blogPost").appendChild(blogPost);
+    reader.onload = function (e) {
+        let blogPost = document.createElement("div");
+        blogPost.className = 'blogPost';
 
-    document.getElementById("addTitle").value = "";
-    document.getElementById("addContent").value = "";
+        blogPost.innerHTML = `
+            <h3>${title}</h3>
+            <p>${content}</p>
+            <img src="${e.target.result}" alt="Blog Image" />
+            <button class="editButton" onclick="editBlog(this)">Edit</button>
+            <button class="deleteButton" onclick="deleteBlog(this)">Delete</button>`;
 
-    document.getElementById('blogContainer').style.display = 'none';
-    document.getElementById('recentBlogs').style.display = 'block';
-    document.getElementById('blogInfo').style.display = 'block';
-    document.getElementById('blogButton').style.display = 'block';
-};
+        document.getElementById("blogPost").appendChild(blogPost);
+
+        document.getElementById("addTitle").value = "";
+        document.getElementById("addContent").value = "";
+        pictureInput.value = "";
+
+        document.getElementById('blogContainer').style.display = 'none';
+        document.getElementById('recentBlogs').style.display = 'block';
+        document.getElementById('blogInfo').style.display = 'block';
+        document.getElementById('blogButton').style.display = 'block';
+    };
+
+    reader.readAsDataURL(file); // Read file as Data URL
+}
+
 
 
 function editBlog(button) {
@@ -55,8 +67,8 @@ function editBlog(button) {
 }
 
 function saveBlog(button) {
-    let newTitle = document.getElementById('addTitle').value.trim();
-    let newContent = document.getElementById('addContent').value.trim();
+    let newTitle = document.getElementById('addTitle').value;
+    let newContent = document.getElementById('addContent').value;
 
     if (newTitle === "" || newContent === "") {
         alert("Please fill in both the title and content.");
