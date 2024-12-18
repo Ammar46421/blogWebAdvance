@@ -10,7 +10,7 @@
     <!-- Navbar Start -->
     <nav id="navbar">
       <div id="titleBar">
-        <h2 id="title">Blogs</h2>
+        <h2 id="title">WebBuy</h2>
       </div>
       <div id="menuBar">
         <ul id="menuList">
@@ -22,8 +22,8 @@
     <!-- Navbar End -->
 
     <!-- Blog Start -->
-    <div id="blogInfo">
-      <h2>Welcome to our Blog</h2>
+    <div id="description">
+      <h2>Welcome to WebBuy</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae
         posuere nunc. Sed finibus, nunc ac convallis consectetur, mauris neque
@@ -32,18 +32,27 @@
         et netus et malesuada fames ac turpis egestas.
       </p>
     </div>
-    <div id="blogFormOpener">
-      <button type="button" onclick="addBlog()" id="blogButton">Add Blog</button>
+    <div id="productFormOpener">
+      <button type="button" onclick="addProduct()" id="productButton">Add Product</button>
     </div>
     <!-- blog form -->
-    <div id="blogContainer" style="display: none;">
-      <form action="" id="blogForm">
+    <div id="productContainer" style="display: none;">
+      <form action="" id="productForm">
         <h2
-          class="addBlog"
+          class="addProduct"
           style="text-align: center; font-size: 50px; margin-bottom: 20px"
         >
-          Add Blog
+          Add Product
         </h2>
+        <div class="formGroup">
+          <label for="price">Price</label>
+          <input
+            type="number"
+            id="addPrice"
+            placeholder="Add Price...."
+            required
+          />
+        </div>
         <div class="formGroup">
           <label for="title">Add Title</label>
           <input
@@ -54,18 +63,18 @@
           />
         </div>
         <div class="formGroup">
-          <label for="content">Content</label>
+          <label for="content">Description</label>
           <textarea
-            id="addContent"
+            id="addDescription"
             name="content"
             rows="5"
-            placeholder="Write your blog here...."
+            placeholder="Add Description."
             required
           ></textarea>
         </div>
         <div class="form-group">
           <button type="button" id="submitButton" onclick="submitBlog()">
-            Submit Blog
+            Submit
           </button>
         </div>
       </form>
@@ -73,9 +82,9 @@
     <!-- Blog End -->
 
     <!-- Blog Posts Section -->
-    <section id="blogPostsSection">
-      <h2 id="recentBlogs" style="display: none;">Recent Blogs</h2>
-      <div id="blogPost"></div>
+    <section id="productSection">
+      <h2 id="recentProducts" style="display: none;">Products</h2>
+      <div id="products"></div>
     </section>
     <!-- Blog Post end -->
 

@@ -59,9 +59,9 @@ body {
 
 /* Navbar End */
 
-/* blog form start */
+/* productform start */
 
-#blogInfo {
+#description {
     border: 2px solid #333;
     border-radius: 8px;
     margin: 15px 15px;
@@ -73,20 +73,20 @@ body {
     background-color: #333; */
 }
 
-#blogInfo h2 {
+#description h2 {
     text-align: center;
     font-size: 50px;
 }
 
-#blogInfo p{
+#description p{
     text-align: justify;
     font-size: 20px;
     margin: 20px 20px;
 }
 
-/* blogFormOpener start */
+/* productFormOpener start */
 
-#blogFormOpener {
+#productFormOpener {
     margin: 20px auto;
     display: flex;
     justify-content: center;
@@ -95,7 +95,7 @@ body {
     height: 100px; */
 }
 
-#blogButton {
+#productButton {
     margin-top: 20px;
     font-size: 30px;
     width: 200px;
@@ -113,16 +113,16 @@ body {
     transition: 0.7s ease-out 100ms;
 }
 
-#blogButton :hover {
+#productButton :hover {
     color: black;
     background-color: #c0c0c0;
     /* transition: 1s ease-in-out; */
 }
 
 
-/* blogFormOpener end */
+/* productFormOpener end */
 
-#blogContainer {
+#productContainer {
     margin: 20px auto;
     padding: 20px;
     max-width: 500px;
@@ -131,11 +131,11 @@ body {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-#blogForm .form-group {
+#productForm .form-group {
     margin-bottom: 15px;
 }
 
-#blogForm label {
+#productForm label {
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
@@ -146,8 +146,8 @@ body {
     color: #555;
 }
 
-#blogForm input,
-#blogForm textarea {
+#productForm input,
+#productForm textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -157,7 +157,7 @@ body {
     resize: none;
 }
 
-#blogForm #submitButton {
+#productForm #submitButton {
     display: block;
     width: 100%;
     padding: 10px;
@@ -173,22 +173,23 @@ body {
 }
 
 
-#blogForm #submitButton:hover {
+#productForm #submitButton:hover {
     color: black;
     background-color: #c0c0c0;
     /* transition: background-color 0.8s ease-in-out, transform 0.8s ease-in-out, color 0.8s ease-in-out; */
 }
 
 
-/* BLOG POST SECTION */
+/* Product SECTION */
 
-/* Blog Posts Section Styling */
-#blogPostsSection {
-    margin: 20px auto;
-    max-width: 700px;
+/* Product Section Styling */
+#productSection {
+    margin: 50px 50px;
+    display: inline-block;
+    /* max-width: 700px; */
 }
 
-#blogPostsSection h2 {
+#productSection h2 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
@@ -196,24 +197,28 @@ body {
 
 /* styles for the elements created by javascript starts  */
 
-.blogPost {
+.products {
     background-color: #fff;
     padding: 15px;
     margin-bottom: 20px;
+    width: 200px;
+    height: 160px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.blogPost h3 {
+.products h3 {
     margin: 0 0 10px;
     font-size: 30px;
     color: #000000;
     text-align: center;
-    text-decoration: underline;
+    background-color:burlywood
+    /* text-decoration: underline; */
+    
 }
 
-.blogPost p {
+.products p {
     margin: 5px 0;
     text-align: center;
     font-size: 23px;
@@ -224,8 +229,10 @@ body {
     color: white;
     background-color: #333;
     /* margin: 25%; */
-    width: 25%;
+    width: 30%;
     height: 30px;
+    font-size: 13px;
+    /* text-align:center; */
     border-radius: 12px;
     cursor: pointer;
 }
@@ -233,8 +240,8 @@ body {
 .editButton {
     color: white;
     background-color: #333;
-    margin-left: 25%;
-    width: 25%;
+    margin-left: 20%;
+    width: 30%;
     height: 30px;
     border-radius: 12px;
     cursor: pointer;
